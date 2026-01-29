@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Face Cover Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f1220;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 { margin-top: 0; }
+    .panel {
+      background: #1a1f3a;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 16px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #5b7cfa;
+      color: white;
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    video {
+      width: 100%;
+      max-width: 720px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+    .card {
+      background: #232864;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Face Cover Video Tool</h1>
+
+<div class="panel">
+  <h3>1. Upload Video</h3>
+  <input type="file" id="videoInput" accept="video/mp4">
+  <video id="video" controls></video>
+</div>
+
+<div class="panel">
+  <h3>2. Detect Faces</h3>
+  <button id="detectBtn" disabled>Detect Faces</button>
+  <p id="status"></p>
+</div>
+
+<div class="panel">
+  <h3>3. Upload Face Covers</h3>
+  <div id="grid" class="grid"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.16.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
