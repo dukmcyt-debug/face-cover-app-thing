@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Browser Face Cover App</title>
+  <style>
+    body { font-family: sans-serif; background:#111; color:#eee; }
+    .grid { display:flex; flex-wrap:wrap; gap:12px; }
+    .card { border:1px solid #444; padding:8px; width:150px; }
+    video { max-width:100%; }
+  </style>
+</head>
+<body>
+  <h1>Face Cover Video Tool (Browser‑Only)</h1>
+  <input type="file" id="videoInput" accept="video/mp4"><br><br>
+  <video id="video" controls></video>
+  <h2>Detected People</h2>
+  <div id="grid" class="grid"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.16.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+
+<script src="app.js"></script>
+</body>
+</html>
